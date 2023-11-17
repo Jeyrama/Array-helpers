@@ -35,3 +35,48 @@ Array.prototype.even    = function () { return this.filter(function(item) { retu
 Array.prototype.odd     = function () { return this.filter(function(item) { return 0 != item % 2; }); }
 
 // or
+
+Array.prototype.square = function() {
+  let squared = [];
+  for (let i = 0; i < this.length; i++) {
+    squared[i] = Math.pow(this[i], 2);
+  }
+  return squared;
+}
+
+Array.prototype.cube = function() {
+  let cubed = [];
+  for (let i = 0; i < this.length; i++) {
+    cubed[i] = Math.pow(this[i], 3);
+  }
+  return cubed;
+}
+
+Array.prototype.sum = function() {
+  let sum = 0;
+  for (let i = 0; i < this.length; i++) {
+    sum += this[i];
+  }
+  return sum;
+}
+
+Array.prototype.average = function() {
+  if (this.length == 0) return NaN;
+  return this.sum() / this.length;
+}
+
+Array.prototype.even = function() {
+  let evens = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] % 2 == 0) evens.push(this[i]);
+  }
+  return evens;
+}
+
+Array.prototype.odd = function() {
+  let odds = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] % 2 == 1) odds.push(this[i]);
+  }
+  return odds;
+}
